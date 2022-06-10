@@ -8,6 +8,7 @@ const session = require('express-session');
 const path = require('path');
 const bcrypt = require('bcrypt');
 
+app.use(expressLayouts);
 app.use(express.urlencoded({ extended: false }));
 // app.use(express.json());
 
