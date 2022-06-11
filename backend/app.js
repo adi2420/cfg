@@ -11,7 +11,6 @@ const bcrypt = require("bcrypt");
 app.use(expressLayouts);
 app.use(express.urlencoded({ extended: false }));
 // app.use(express.json());
-app.use(expressLayouts);
 
 // const pathView = path.join(__dirname, '../frontend/');
 // console.log(pathView);
