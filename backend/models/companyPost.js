@@ -8,6 +8,7 @@ let companyPost = mongoose.Schema({
   stipend: { type: Number, required: true },
   technical: { type: Array },
   nonTechnical: { type: Array },
+  selectedStudent: {type: Array} 
 });
 
 module.exports = mongoose.model('CompanyPost', companyPost);
