@@ -3,6 +3,8 @@ const router = express.Router();
 const User = require('../models/users');
 const bcrypt = require('bcrypt');
 
+//studnet---- register, login,
+
 //Get
 router.get('/login', (req, res) => {
   res.render('userLogin');
@@ -10,6 +12,11 @@ router.get('/login', (req, res) => {
 
 router.get('/dashboard', (req, res) => {
   res.render('userDashboard');
+});
+
+//from user dashboard=> resume creation
+router.get('./resume', (req, res) => {
+  res.render('resumeForm');
 });
 
 //Post
@@ -57,6 +64,21 @@ router.post('/login', (req, res) => {
       }
     });
   }
+});
+
+router.post('./resumeSubmit/:id', (req, res) => {
+  User.findOne({ _id: req.params.id }, (err, user) => {
+    let {
+      name,
+      email,
+      technical,
+      nonTechnical,
+      semester,
+      qualification,
+      college,
+    } = req.body;
+    res.render('resume', {});
+  });
 });
 
 module.exports = router;
